@@ -15,7 +15,7 @@ CREATE TABLE apachelog (
   agent STRING)
 ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.RegexSerDe'
 WITH SERDEPROPERTIES (
-  "input.regex" = "([^]*) ([^]*) ([^]*) (-|\\[^\\]*\\]) ([^ \"]*|\"[^\"]*\") (-|[0-9]*) (-|[0-9]*)(?: ([^ \"]*|\".*\") ([^ \"]*|\".*\"))?"
+  "input.regex" = "([^ ]*) ([^ ]*) ([^ ]*) (-|\\[^\\]*\\]) ([^ \"]*|\"[^\"]*\") (-|[0-9]*) (-|[0-9]*)(?: ([^ \"]*|\".*\") ([^ \"]*|\".*\"))?"
 )
 STORED AS TEXTFILE;
 More about RegexSerDe can be found here in HIVE-662 and HIVE-1719.
